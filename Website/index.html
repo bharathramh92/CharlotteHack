@@ -80,7 +80,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Marvelous 4 is a Healthcare Track Project</h2>
-                    <p class="lead">This project helps you to search for hospitals that best suits your queries. Data collected from <a target="_blank" href="http://tinyurl.com/charlottehackhealthcare">The Dropbox</a></p>
+                    <p class="lead">This project helps you to search for hospitals that best suit your queries. Data collected from <a target="_blank" href="http://tinyurl.com/charlottehackhealthcare">The Dropbox</a></p>
                 </div>
             </div>
             <!-- /.row -->
@@ -97,46 +97,46 @@
                     <h2>Our Services</h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-cloud fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Find Hospitals</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                
                                 <!-- <a href="#" class="btn btn-light">Learn More</a> -->
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-compass fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Query Problems</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                
                                 <!-- <a href="#" class="btn btn-light">Learn More</a> -->
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-flask fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Patient Satisfaction</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                
                                 <!-- <a href="#" class="btn btn-light">Learn More</a> -->
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <!-- <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -147,8 +147,8 @@
                                 </h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <!-- <a href="#" class="btn btn-light">Learn More</a> -->
-                            </div>
-                        </div> 
+                            <!-- </div>
+                        </div> -->
                     </div>
                     <!-- /.row (nested) -->
                 </div>
@@ -177,7 +177,7 @@
                         <div class="col-md-4">
                             <div class="portfolio-item">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Zipcode" />
+                                    <input type="text" class="form-control bfh-number" placeholder="Zipcode" id="enterZip" maxlength="5" />
                                 </div>
                                 <!-- <a href="#">
                                     <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
@@ -186,7 +186,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="portfolio-item">
-                                <select class="form-control placeholder">
+                                <select class="form-control placeholder" id="selectOwnership">
                                     <option value="">Select Ownership</option>
                                     <option>Government - Federal</option>
                                     <option>Government - District</option>
@@ -206,7 +206,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="portfolio-item">
-                                <select class="form-control placeholder">
+                                <select class="form-control placeholder" id="selectEmergency">
                                     <option value="">Emergency Services</option>
                                     <option>Yes</option>
                                     <option>No</option>
@@ -241,6 +241,11 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-md-12 text-center">
+                            <div class="portfolio-item">
+                                <a id="submitQuery" class="btn btn-lg btn-dark">Submit</a>                
+                            </div>
+                        </div>
                     </div>
                     <!-- /.row (nested) -->
                     <!-- <a href="#" class="btn btn-dark">View More Items</a> -->
@@ -251,15 +256,15 @@
         </div>
         <!-- /.container -->
     </section>
-
+    
+    
     <!-- Call to Action -->
     <aside class="call-to-action bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3>Hospitals Best Suits your Search</h3>
-                    <!-- <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a> -->
+                    <h3>Hospitals Best Suit your Search</h3>
+
 
                 </div>
             </div>
@@ -291,16 +296,17 @@
     <br/><br/><br/><br/>
 
     <!-- Map -->
-    <section id="contact" class="map">
+    <!-- <section id="contact" class="map">
         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
         <br />
         <small>
             <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
         </small>
         </iframe>
-    </section>
+    </section> -->
 
     <!-- Footer -->
+    <section id="contact">
     <footer>
         <div class="container">
             <div class="row">
@@ -315,7 +321,7 @@
                         <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:premier@gmail.com">premier@gmail.com</a>
                         </li>
                     </ul>
-                    <br>
+                   
                     <!-- <ul class="list-inline">
                         <li>
                             <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
@@ -333,6 +339,7 @@
             </div>
         </div>
     </footer>
+    </section>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -342,6 +349,38 @@
 
     <!-- Custom Theme JavaScript -->
     <script>
+
+    //Initial Page load
+    // $(window).load(function(e){
+        // $.ajax({
+        //     url: "",
+        //     type: "post",
+        //     datattype: "json",
+        //     data: {},
+        //     success: function(response){
+        //         alert(response.message);
+        //     },
+        //     error(function() {
+                
+        //     });
+        // });
+    // });
+
+    //Restricting only numbers
+    // $("#enterZip").keyup(function(e){
+    //     this.value = this.value.replace(/[^0-9\.]/g,'');
+    // });
+
+    //On submitting the query
+    // $("#submitQuery").click(function(e){
+    //     alert($("#enterZip").val());
+    // });
+
+    //On changing the measure group
+    // $("#selectMeasureGroup").change(function(e) {
+    //     alert("Hello");
+    // });
+
     // Closes the sidebar menu
     $("#menu-close").click(function(e) {
         e.preventDefault();
