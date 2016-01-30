@@ -1,8 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-#secrets
-easy_ecom/settings_sensitive.py
+*$py.class
 # C extensions
 *.so
 
@@ -44,6 +43,7 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *,cover
+.hypothesis/
 
 # Translations
 *.mo
@@ -58,6 +58,8 @@ docs/_build/
 # PyBuilder
 target/
 
-
 # IDE
 .idea/
+
+#Ipython Notebook
+.ipynb_checkpoints
