@@ -5,11 +5,10 @@
 {% block table %}
 {% for dt in data%}
 <tr>
-<td>-</td>
     <td>{{dt.HospitalName}}</td>
     <td>{{dt.HospitalType}}</td>
     <td>{{dt.PhoneNumber}}</td>
-    <td>{{dt.Address}}</td>
+    <td>{{dt.Address}}, {{dt.CountyName}}, {{dt.State}}</td>
 </tr>
 
 {% endfor %}
