@@ -22,9 +22,9 @@ def rank(zipcode, hosp_type, emergency, criteria):
                           "H_COMP_4_A_P","H_COMP_5_A_P","H_COMP_7_A","H_COMP_7_SA","H_QUIET_HSP_A_P"],
                     "sr":["MSPB_1"]}
 
-
-
-    data = Hospital.objects.filter(EmergencyServices__iexact = emergency, HospitalOwnership__in=hosp_ownership_types)
+    data = Hospital.objects.filter(EmergencyServices__iexact=emergency,
+                                   HospitalOwnership__in=hosp_ownership_types,
+                                   ZIPCode__startswith=zipcode[:3])
     keys = "MORT_30_AMI,MORT_30_HF,MORT_30_PN,PSI_90_SAFETY,IMM_2,PN_6,SCIP_CARD_2,SCIP_INF_2,SCIP_INF_3,SCIP_INF_9,SCIP_VTE_2,AMI_7A,HAI1,HAI2,HAI3,HAI4,H_CLEAN_HSP_A_P,H_COMP_1_A_P,H_COMP_2_A_P,H_COMP_3_A_P,H_COMP_4_A_P,H_COMP_5_A_P,H_COMP_7_A,H_COMP_7_SA,H_QUIET_HSP_A_P,H_CLEAN_QUIET,H_COMP_7,MSPB_1"
     keys_list = keys.split(",")
     criteria = [criteria]
