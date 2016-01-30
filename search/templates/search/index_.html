@@ -2,11 +2,4 @@
 
 {% block title %}Search{% endblock %}
 
-{% block body %}
-<form id="searchHospital" method="post" action="{% url 'search:index' %}">
-    {% csrf_token %}
-    {{ form }}
 
-    <input type="submit" value="Submit">
-</form>
-{% endblock %}

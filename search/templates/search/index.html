@@ -19,7 +19,7 @@
     <link href="{% static 'search/css/stylish-portfolio.css' %}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'font-awesome/css/font-awesome.min.css"' %}"  rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -188,17 +188,17 @@
                         <div class="col-md-4">
                             <div class="portfolio-item">
                                 <select class="form-control placeholder" id="selectOwnership">
-                                    <option value="">Select Ownership</option>
-                                    <option>Government - Federal</option>
-                                    <option>Government - District</option>
-                                    <option>Government - State</option>
-                                    <option>Government - Local</option>
-                                    <option>Physician</option>
-                                    <option>Proprietary</option>
-                                    <option>Tribal</option>
-                                    <option>Voluntary non Profit - Church</option>
-                                    <option>Voluntary non Profit - Private</option>
-                                    <option>Voluntary non Profit - Other</option>
+                                    <option value="a">All</option>
+                                    <option value="a">Government - Federal</option>
+                                    <option value="a">Government - District</option>
+                                    <option value="a">Government - State</option>
+                                    <option value="a">Government - Local</option>
+                                    <option value="a">Physician</option>
+                                    <option value="a">Proprietary</option>
+                                    <option value="a">Tribal</option>
+                                    <option value="a">Voluntary non Profit - Church</option>
+                                    <option value="a">Voluntary non Profit - Private</option>
+                                    <option value="a">Voluntary non Profit - Other</option>
                                 </select>
                                 <!-- <a href="#">
                                     <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
@@ -208,9 +208,8 @@
                         <div class="col-md-4">
                             <div class="portfolio-item">
                                 <select class="form-control placeholder" id="selectEmergency">
-                                    <option value="">Emergency Services</option>
-                                    <option>Yes</option>
-                                    <option>No</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
                                 </select>
                                 <!-- <a href="#">
                                     <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
@@ -224,27 +223,18 @@
                                 </a> -->
                                 <label for="selectMeasureGroup">Measure Group</label>
                                 <select class="form-control" id="selectMeasureGroup">
-                                    <option>All</option>
-                                    <option>Clinical Outcomes</option>
-                                    <option>Clinical Process</option>
-                                    <option>Complications</option>
-                                    <option>Patient Experience</option>
-                                    <option>Spending Reduction</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <label for="selectCategory">Category</label>
-                                <select class="form-control" id="selectCategory">
-                                    <option>All</option>
-                                    
+                                    <option value="all">All</option>
+                                    <option value="all">Clinical Outcomes</option>
+                                    <option value="all">Clinical Process</option>
+                                    <option value="all">Complications</option>
+                                    <option value="all">Patient Experience</option>
+                                    <option value="all">Spending Reduction</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-12 text-center">
                             <div class="portfolio-item">
-                                <a id="submitQuery" class="btn btn-lg btn-dark">Submit</a>                
+                                <a id="submitQuery" class="btn btn-lg btn-dark">Submit</a>
                             </div>
                         </div>
                     </div>

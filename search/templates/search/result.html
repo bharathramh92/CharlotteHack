@@ -2,8 +2,15 @@
 
 {% block title %}Search Results{% endblock %}
 
-{% block body %}
+{% block table %}
 {% for dt in data%}
-<p>{{dt.HospitalName}}</p>
+<tr>
+<td>-</td>
+    <td>{{dt.HospitalName}}</td>
+    <td>{{dt.HospitalType}}</td>
+    <td>{{dt.PhoneNumber}}</td>
+    <td>{{dt.Address}}</td>
+</tr>
+
 {% endfor %}
 {% endblock %}
