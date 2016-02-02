@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'search',
+    'storages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,4 +103,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
+DEFAULT_FILE_STORAGE = 'aws_storage_classes.MediaStorage'
+AWS_ACCESS_KEY_ID = 'AKIAJUDGHVMBI3MFVUKQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'charlotte-hack'
+STATICFILES_STORAGE = 'aws_storage_classes.StaticStorage'
+
+AWS_S3_CUSTOM_DOMAIN = "d1m1ihjkuzut65.cloudfront.net"
+
+STATIC_URL = "https://%s/static/" % (AWS_S3_CUSTOM_DOMAIN)
+
+STATIC_ROOT = "/home/ubuntu/django_projects/CharlotteHack/static"
+
+MEDIA_ROOT = "/home/ubuntu/django_projects/CharlotteHack/media"
+
+MEDIA_URL = "https://%s/media/" % (AWS_S3_CUSTOM_DOMAIN)
+
+
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SESSION_COOKIE_SECURE = True
