@@ -1,19 +1,23 @@
 from django.shortcuts import render
 from search.forms import SearchForm
 from search.models import Hospital
-from django.db.models import Q
 from search.forms import CRITERIA_CHOICE, HOSP_CHOICES_Dict, EMERGENCY_CHOICE
 # Create your views here.
 
 
 def rank(zipcode, hosp_type, emergency, criteria):
     hosp_types_dist = [x['HospitalOwnership'] for x in Hospital.objects.values('HospitalOwnership').distinct()]
-    print("hosp_type ", hosp_type)
+    # print("hosp_type ", hosp_type)
+    if emergency == "yes":
+        emergency = [EMERGENCY_CHOICE["yes"]]
+    else:
+        emergency = [EMERGENCY_CHOICE["no"], EMERGENCY_CHOICE["yes"]]
+
     if hosp_type == "a":
         hosp_ownership_types = hosp_types_dist
     else:
         hosp_ownership_types = [HOSP_CHOICES_Dict[hosp_type]]
-    print(hosp_ownership_types)
+    # print(hosp_ownership_types)
     # data = Hospital.objects.all()
     criteria_map = {"co":["MORT_30_AMI","MORT_30_HF","MORT_30_PN","PSI_90_SAFETY"],
                     "cp": ["IMM_2","PN_6","SCIP_CARD_2","SCIP_INF_2","SCIP_INF_3","SCIP_INF_9","SCIP_VTE_2","AMI_7A"],
@@ -22,7 +26,7 @@ def rank(zipcode, hosp_type, emergency, criteria):
                           "H_COMP_4_A_P","H_COMP_5_A_P","H_COMP_7_A","H_COMP_7_SA","H_QUIET_HSP_A_P"],
                     "sr":["MSPB_1"]}
 
-    data = Hospital.objects.filter(EmergencyServices__iexact=emergency,
+    data = Hospital.objects.filter(EmergencyServices__in=emergency,
                                    HospitalOwnership__in=hosp_ownership_types,
                                    ZIPCode__startswith=zipcode[:3])
     keys = "MORT_30_AMI,MORT_30_HF,MORT_30_PN,PSI_90_SAFETY,IMM_2,PN_6,SCIP_CARD_2,SCIP_INF_2,SCIP_INF_3,SCIP_INF_9,SCIP_VTE_2,AMI_7A,HAI1,HAI2,HAI3,HAI4,H_CLEAN_HSP_A_P,H_COMP_1_A_P,H_COMP_2_A_P,H_COMP_3_A_P,H_COMP_4_A_P,H_COMP_5_A_P,H_COMP_7_A,H_COMP_7_SA,H_QUIET_HSP_A_P,H_CLEAN_QUIET,H_COMP_7,MSPB_1"

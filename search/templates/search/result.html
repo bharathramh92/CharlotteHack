@@ -3,13 +3,33 @@
 {% block title %}Search Results{% endblock %}
 
 {% block table %}
-{% for dt in data%}
-<tr>
-    <td>{{dt.HospitalName}}</td>
-    <td>{{dt.HospitalType}}</td>
-    <td>{{dt.PhoneNumber}}</td>
-    <td>{{dt.Address}}, {{dt.CountyName}}, {{dt.State}}</td>
-</tr>
+{% if data|length != 0 %}
 
-{% endfor %}
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Hospital</th>
+        <th>Hospital Ownership Type</th>
+        <th>Contact</th>
+        <th>Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for dt in data%}
+    <tr>
+        <td>{{dt.HospitalName}}</td>
+        <td>{{dt.HospitalOwnership}}</td>
+        <td>{{dt.PhoneNumber}}</td>
+        <td><a href="http://maps.google.com/?q={{dt.Address}}, {{dt.CountyName}}, {{dt.State}}" target="_blank">
+            {{dt.Address}}, {{dt.CountyName}}, {{dt.State}}</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% else %}
+<h3>Zero results</h3>
+{% endif %}
 {% endblock %}
